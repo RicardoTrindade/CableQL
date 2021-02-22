@@ -1,15 +1,14 @@
 # frozen_string_literal: true
 
-module Queries
-  class GetUser < GraphQL::Schema::Resolver
+module Mutations
+  class UpdateUser < GraphQL::Schema::Resolver
     description "Information about the Customer"
 
     type Types::User, null: true
 
-    argument :id, Integer, "ID of the Customer", required: true
-
     def resolve(**args)
-      User.find(args[:id])
+      User.last.update(email: "update@email.com")
+      User.last
     end
   end
 end
