@@ -1,0 +1,46 @@
+schema {
+  query: QueryRoot
+  mutation: MutationRoot
+  subscription: SubscriptionRoot
+}
+
+"""
+The mutation root of the ApiSchema.
+"""
+type MutationRoot {
+  """
+  Information about the Customer
+  """
+  updateUser: User
+}
+
+"""
+The query root of the ApiSchema.
+"""
+type QueryRoot {
+  """
+  Information about the Customer
+  """
+  getUser(
+    """
+    ID of the Customer
+    """
+    id: Int!
+  ): User
+}
+
+"""
+The query root of the ApiSchema.
+"""
+type SubscriptionRoot {
+}
+
+"""
+Customer related information
+"""
+type User {
+  """
+  id
+  """
+  id: Int!
+}
