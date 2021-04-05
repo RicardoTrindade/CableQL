@@ -9,9 +9,9 @@ The mutation root of the ApiSchema.
 """
 type MutationRoot {
   """
-  Information about the Customer
+  Creates 10 users in a background job
   """
-  updateUser: User
+  createBatchUser: Boolean!
 }
 
 """
@@ -40,6 +40,11 @@ type SubscriptionRoot {
 Customer related information
 """
 type User {
+  """
+  email
+  """
+  email: String!
+
   """
   id
   """
